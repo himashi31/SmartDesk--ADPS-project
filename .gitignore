@@ -1,0 +1,33 @@
+
+# Frontend dependencies and build files
+node_modules/
+.next/
+out/
+dist/
+
+# Backend build files
+target/
+*.class
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+*.pem
+*.key
+
+# Logs and temporary files
+*.log
+*.bak
+*.tmp
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Operating system files
+.DS_Store
+Thumbs.db

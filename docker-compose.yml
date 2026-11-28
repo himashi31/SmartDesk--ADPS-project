@@ -1,0 +1,18 @@
+
+# Local MySQL for development
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: smartdesk-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD first}
+      MYSQL_DATABASE: smartdesk
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - smartdesk-data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+volumes:
+  smartdesk-data:
